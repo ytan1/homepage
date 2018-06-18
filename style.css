@@ -1,0 +1,69 @@
+html,body{
+    margin: 0px;
+    background-image: url('./background.jpg');
+    background-repeat: repeat;
+    transition: scrollTop .6s ease-in;
+}
+
+.header{
+    width: 100%;
+    height: 500px;
+    background: #088da5;
+    opacity: .7;
+}
+@media screen and (max-width: 800px){
+    .header, .header-bottom{
+        width: 800px;
+    }
+}
+.header-bottom{
+    width: 100%;
+    background: #088da5;
+    opacity: .7;
+}
+.header-bottom svg{
+    position: absolute;
+}
+.header-bottom path{
+    transition: all .6s ease-in-out;
+}
+.header-bottom path:hover{
+    opacity: 0.7;
+    transition: all .6s ease-in-out;
+}
+
+.title-anim{
+    width: 800px;
+    height: 150px;
+    border: 1px solid red;
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+    top:50%;
+    margin-top: -120px;
+}
+
+.content-block{
+    position: relative;
+    width: 800px;
+    height: 300px;
+    border-radius: 20px;
+    background: white;
+    margin: 100px auto;
+    box-shadow: 10px 10px 10px -10px black;
+    transition: all .6s ease-in-out;
+}
+.content-block:hover{
+    transform: translateY(-4px);
+}
+
+
+.nav{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    left: 50%;
+    margin-left: -630px;
+    top: 750px;
+    background: white;
+}
