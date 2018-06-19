@@ -10,6 +10,8 @@ html,body{
     height: 500px;
     background: #088da5;
     opacity: .7;
+    position: relative;
+    overflow: hidden;
 }
 @media screen and (max-width: 800px){
     .header, .header-bottom{
@@ -40,9 +42,80 @@ html,body{
     left: 50%;
     margin-left: -400px;
     top:50%;
-    margin-top: -120px;
+    margin-top: -75px;
+    /*for enlarge the tiny bodymovin animation*/
+    transform: scale(4,4);
+    transition: opacity .3s ease-in-out;
+}
+.title-game{
+    width: 800px;
+    height: 150px;
+    border: 1px solid red;
+    position: absolute;
+    left: 50%;
+    margin-left: -400px;
+    top:50%;
+    margin-top: -75px;
+
+}
+.semi-transparent{
+    opacity: .5;
+}
+.transparent{
+    opacity: 0;
 }
 
+/*game */
+#game-horizon{
+    border: 1px red solid;
+    border-bottom: 2px white solid;
+    position: absolute;
+    top:0;
+    bottom: 36%;
+    /*center align, outside part overhidden*/
+    width: 120%;
+    margin-left: -10%;
+}
+.cactus{
+    display: inline-block;
+    border: 1px white solid;
+    position: absolute;
+    height: 60px;
+    width: 50px;
+    bottom: 0;
+    right: 0;
+}
+.dinosaur{
+    display: inline-block;
+    width: 60px;
+    height: 75px;
+    border: 1px white solid;
+    position: absolute;
+    right: 450px;
+    bottom: 0;
+    
+}
+.dinosaur-inside{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    transform: scale(4.5,4.5) translateY(1px);
+    border: 1px green solid;
+
+}
+.jump{
+    animation: jumpFrame 1s ease-in-out 0s 1 normal forwards;
+}
+@keyframes jumpFrame{
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-80px); }
+    100% { transform: translateY(0px); }
+}
+
+
+
+
+/*content*/
 .content-block{
     position: relative;
     width: 800px;
@@ -56,6 +129,7 @@ html,body{
 .content-block:hover{
     transform: translateY(-4px);
 }
+
 
 
 .nav{
