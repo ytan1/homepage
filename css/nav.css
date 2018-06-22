@@ -26,8 +26,8 @@
     background: white;
 }
 .nav-item:hover{
-    animation: vibrate .3s linear 0s 1 normal backwards;
-    -webkit-animation: vibrate .3s linear 0s 1 normal backwards;
+    animation: vibrate .2s ease-in-out 0s 1 normal backwards;
+    -webkit-animation: vibrate .2s ease-in-out 0s 1 normal backwards;
     cursor: pointer;
     color: #088da5;
 }
@@ -46,3 +46,46 @@
     100%{ left: 0px; }
 }
 
+.contacts{
+    position: absolute;
+    width:100%;
+    bottom: 0;
+    z-index: -1;
+}
+.contact-item{
+    color: #999;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    margin-left: 8px;
+    float: left;
+    background: #fff;
+    transition: transform .3s ease-in-out;
+    text-align: center;
+    line-height: 44px;
+    box-shadow: 1px 1px 1px -1px black;
+    cursor: pointer;
+}
+.contact-item:hover{
+    color: #088da5;
+}
+.contact-item:first-child{
+    margin-left: 0;
+}
+
+.contact-item:first-child.eject{
+    transform: translateY(60px);
+    transition-delay: 0;
+}
+.contact-item:nth-child(2).eject{
+    transform: translateY(60px);
+    transition-delay: 0.1s;
+}
+.contact-item:nth-child(3).eject{
+    transform: translateY(60px);
+    transition-delay: 0.2s;
+}
+.contact-item:nth-child(4).eject{
+    transform: translateY(60px);
+    transition-delay: 0.3s;
+}

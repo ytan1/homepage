@@ -1,8 +1,16 @@
 html,body{
     margin: 0px;
+    /*background-image: url('./background.jpg');
+    background-repeat: repeat;
+    background-attachment: fixed;*/
+}
+.background{
+    width: 100%;
+    height: 100%; 
+    /*height 100% of viewport, after scrolling it is changed to right size*/
+    position: absolute;
     background-image: url('./background.jpg');
     background-repeat: repeat;
-    transition: scrollTop .6s ease-in;
 }
 a{
     list-style: none;
@@ -86,9 +94,13 @@ a{
     margin: 100px auto;
     box-shadow: 10px 10px 10px -10px black;
     transition: all .6s ease-in-out;
+    opacity: 0.3;
 }
 .content-block:hover{
     transform: translateY(-4px);
+}
+.fade-in{
+    opacity: 1;
 }
 
 
