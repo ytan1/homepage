@@ -6,13 +6,16 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/game.css">
     <link rel="stylesheet" type="text/css" href="css/nav.css">
+    <link rel="stylesheet" type="text/css" href="css/carousel.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Architects+Daughter|Roboto" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.7.3/tiny-slider.css">
 
 
 </head>
 <body>
     <div class="background"></div>
-    <header class="header">
+    <header class="header" id="top">
 
         <div class="title-anim"></div>
         <div class="title-game">
@@ -46,8 +49,76 @@
 
     <!-- content -->
     <div class="content">
-        <div class="content-block" id="content1"></div>
-        <div class="content-block" id="content2"></div>
+        <div class="content-block" id="content1">
+            <div class="content-title">About myself</div>
+            <div class="intro-wrap">
+                <div class="avatar"><img src="./css/avatar.png"></div>
+                <div class="intro">Hi! Thank you for coming to my awesome homepage. My name is Yang (or Young). I am now a student in University of Alberta. I love to create beautiful stuff and fancy effects on a website and have been programming for a few applications of my own. Check them out~ Meanwhile I am looking forward to cooperating with all you talented guys in this field and learning a lot from you guys at any moment. Other than that, I like watching Netflix pretty much everyday, hitting the gym and playing Civ5 sometimes... Anyway I hope you can find something <em><strong>fun</strong></em> on this page. See you around!</div>
+            </div>
+        </div>
+        <div class="content-block" id="content2">
+            <div class="content-title">My apps</div>
+            <div class="apps-wrap">
+                <div class="app">
+                    <div class="app-left">
+                        <div class="app-name">A chat app for recruiting and finding jobs</div>
+                        <div class="app-features">
+                            <i class="far fa-star"></i>&nbsp;Containing 2 types of users (employees and employers) with functions of chatting, posting infos, uploading avatars and CV<br>
+                            <i class="far fa-star"></i>&nbsp;Single page app built on React.js, redux and react-router <br>
+                            <i class="far fa-star"></i>&nbsp;Smooth UI and animation based on Semantic UI and React Transition Group<br>
+                            <i class="far fa-star"></i>&nbsp;Back end served by express.js, deployed on AWS linux AMI<br>
+                            <i class="far fa-star"></i>&nbsp;Data storage by MongoDB and mongoose<br>
+                            <i class="far fa-star"></i>&nbsp;First page server side rendering for performance optimization<br>
+
+                        </div>
+                    </div>
+                    <div class="app-right">
+                        <div class="app-carousel">
+                            <img src="./css/background.jpg" class="pic">
+                            <img src="./css/avatar.png">
+                            <div>3</div>
+                            <div>4</div>
+                        </div>
+                        <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+                    </div>
+                </div>
+                <div class="app">
+                    <div class="app-left">
+                        <div class="app-name">EMall - A website for online shopping</div>
+                        <div class="app-features">
+                            <strong>Front end: <br></strong>
+                            <i class="far fa-star"></i>&nbsp;Users can view the list of products with pagination, details of product, check the quantity in cart page, confirm order, view multiple orders and order details.<br>
+                            <i class="far fa-star"></i>&nbsp;Users can register, login, find password by security questions and reset personal info  <br>
+                            <i class="far fa-star"></i>&nbsp;One user can set multiple shipping addresses in order confirm page<br>
+                            <i class="far fa-star"></i>&nbsp;Client side built with jquery, packaged by webpack4 with JS and CSS files seperatedly loaded.<br>
+                            <strong>Back end: <br></strong>
+                            <i class="far fa-star"></i>&nbsp;Configured using SpringMVC<br>
+                            <i class="far fa-star"></i>&nbsp;Using MyBatis for operating DB served by MySQL<br>
+                            <i class="far fa-star"></i>&nbsp;Using pagehelper plugin for pagination of products and orders info<br>
+                            <i class="far fa-star"></i>&nbsp;Deployed by tomcat server in AWS linux AMI, seperated FTP server for pictures<br>
+                        </div>
+                    </div>
+                    <div class="app-right">
+                        
+                    </div>
+                </div>
+                <div class="app">
+                    <div class="app-left">
+                        <div class="app-name">Other projects: </div>
+                        <div class="app-features">
+                            <i class="far fa-star"></i>&nbsp;A animated photo gallery based on CSS3 and React.js<br>
+                            <i class="far fa-star"></i>&nbsp;A single page task managing system using SCSS and gulp. Mobile friendly. <br>
+                            <i class="far fa-star"></i>&nbsp;Some small games including tetris battling, snake just for your fun! <br>
+                        </div>
+                    </div>
+                    <div class="app-right">
+                        <div class="app-pic"></div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
         <div class="content-block" id="content3"></div>
         <div class="nav">
             <a href="#content1">
@@ -69,11 +140,14 @@
 
         </div>
     </div>
+    <footer></footer>
     
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.7.3/min/tiny-slider.js"></script>
 
     <script type="text/javascript" src="./js/lottie.js">  </script>
+    <script type="text/javascript" src="./js/carousel.js"></script>
     <script type="text/javascript" src="./js/game.js"></script>
     <script type="text/javascript" src="./js/index.js">  </script>
+
 </body>
 </html>

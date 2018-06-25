@@ -43,6 +43,7 @@ var smoothScroll = function(e){
 }
 document.getElementsByClassName('nav')[0].onclick = function(e){ smoothScroll(e) }
 document.getElementsByClassName('header-bottom')[0].onclick = function(e){ smoothScroll(e) }
+// document.getElementsByClassName('intro')[0].getElementsByTagName('a')[0].onclick = function(e){ smoothScroll(e) }
 
 
 
@@ -120,7 +121,6 @@ window.onscroll = function(){
     background.style.top = 0.5*scrollTop + 'px'        //parallax scrolling
     background.style.height = scrollHeight - 0.5*scrollTop + 'px'   //parallax scrolling set the background height
 
-    console.log(clientHeight)
     //render content block when scrolling into
     if(scrollTop > lastScrollTop){
         //scrolling down 
@@ -154,13 +154,6 @@ window.onscroll = function(){
             }
         })
     }
-
-
-
-
-
-
-
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 }
 
@@ -178,3 +171,8 @@ contacts.onclick = function(){
         ele.classList.toggle('eject')
     })
 }
+
+//carousel in app
+var carousel = new Carousel()
+carousel.build(document.getElementsByClassName('app-carousel')[0])
+console.log(tns)
