@@ -184,4 +184,11 @@
     var top = document.getElementById('scratch-top')
     var scratchCard = new ScratchCard()
     scratchCard.build(canvas)
+
+
+
+    //flip behaviour
+    var flipCard = new FlipCard()
+    var skill2 = document.getElementById('skill2')
+    flipCard.build(skill2, '#5e9af9')
 })()  

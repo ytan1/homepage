@@ -1,0 +1,11 @@
+.skill{
+    transform-style: preserve-3d;
+    perspective: 800px;
+}
+.flip-container{
+    transform-style: preserve-3d;
+    transition: transform 1s ease-in-out;
+}
+.skill:hover .flip-container{
+    transform: rotateY(180deg);
+}
