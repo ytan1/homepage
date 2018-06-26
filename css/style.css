@@ -182,3 +182,13 @@ a{
     box-sizing: border-box;
     /*border: 1px red solid;*/
 }
+
+#content3{
+    cursor: url('./knife-cursor.jpg');
+}
+#canvas{
+    background-image: url('./canvasBottom.jpg');
+    background-size: cover;
+    cursor: pointer;
+    /*cursor: -webkit-grab; cursor:-moz-grab; */
+}
