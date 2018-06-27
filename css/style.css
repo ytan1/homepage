@@ -189,6 +189,5 @@ a{
 #canvas{
     background-image: url('./canvasBottom.jpg');
     background-size: cover;
-    cursor: pointer;
-    /*cursor: -webkit-grab; cursor:-moz-grab; */
+    cursor: url('knife.png'), auto;
 }
