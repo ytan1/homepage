@@ -5,7 +5,7 @@ var Game = function(container){
     var t = 0
     var cactusINTERVAL = 1750
     var movingINTERVAL = 10
-    var MOVEMENT = 2
+    var MOVEMENT = 3
     var newCactus, cactusInside
     var rightLimit = container.offsetWidth/120*110
     var isJump = false
@@ -203,7 +203,7 @@ var Game = function(container){
 var Jumping = function(){  
     //set some constants
     var jumpHeight = 160   // px
-    var jumpTime = 1000  //  ms
+    var jumpTime = 700  //  ms
     // var jumpInitVelo = 10   //  px/ms
     var jumpINTERVAL = 5  // ms
     var gravity = 8*jumpHeight/jumpTime/jumpTime          

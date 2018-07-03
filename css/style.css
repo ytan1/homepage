@@ -6,11 +6,18 @@ html,body{
     font-family: 'Roboto', sans-serif;
     font-family: 'Architects Daughter', cursive;
 }
+body{
+    position: relative;
+    
+    /*overflow: hidden;*/
+}
 .background{
     width: 100%;
-    height: 100%; 
+    /*height: 100%; */
     /*height 100% of viewport, after scrolling it is changed to right size*/
     position: absolute;
+    top: 0;
+    bottom: 0;
     background-image: url('./background.jpg');
     background-repeat: repeat;
 }
@@ -184,10 +191,29 @@ a{
 }
 
 #content3{
-    cursor: url('./knife-cursor.jpg');
+    /*position: relative; already set in .content-block*/
 }
 #canvas{
     background-image: url('./canvasBottom.jpg');
     background-size: cover;
     cursor: url('knife.png'), auto;
+}
+
+/*footer*/
+footer{
+    /*position: absolute;
+    bottom: 0;*/
+    position: relative;
+    width: 100%;
+    background: #000;
+    opacity: .5;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 14px;
+    font-family: 'Roboto', sans-serif;
+    color: white;
+}
+footer i{
+    font-size: 24px;
+    color: white;
 }

@@ -108,7 +108,7 @@
     var background = document.getElementsByClassName('background')[0]
     var scrollTop = 0
     var clientHeight = 0
-    var scrollHeight = document.documentElement.scrollHeight;
+    var scrollHeight = document.getElementsByTagName('body')[0].scrollHeight;
     var contents = document.getElementsByClassName('content-block')
     window.onscroll = function(){
         scrollTop =  window.pageYOffset || html.scrollTop
@@ -120,8 +120,8 @@
             nav.classList.remove('fix-nav')     //unfix it
         }
         background.style.top = 0.5*scrollTop + 'px'        //parallax scrolling
-        background.style.height = scrollHeight - 0.5*scrollTop + 'px'   //parallax scrolling set the background height
-
+        // background.style.height = scrollHeight - 0.5*scrollTop + 'px'   //parallax scrolling set the background height
+        // background.style.bottom = 0 + 'px'
         //render content block when scrolling into
         if(scrollTop > lastScrollTop){
             //scrolling down 
@@ -155,6 +155,7 @@
                 }
             })
         }
+
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
     }
 
@@ -191,4 +192,13 @@
     var flipCard = new FlipCard()
     var skill2 = document.getElementById('skill2')
     flipCard.build(skill2, '#5e9af9')
+    var skill3 = document.getElementById('skill3')
+    var skill4 = document.getElementById('skill4')
+    var skill5 = document.getElementById('skill5')
+    var skill6 = document.getElementById('skill6')
+    flipCard.build(skill3, 'rgb(26, 42, 76, .7)', true) //true means flip vertically
+    flipCard.build(skill4, 'rgb(37, 252, 102, .7)')
+    flipCard.build(skill5, 'rgb(254, 255, 247, .7)', true)
+    flipCard.build(skill6, 'rgb(77, 36, 147, .7)')
+
 })()  

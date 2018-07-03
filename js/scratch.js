@@ -14,7 +14,7 @@ var ScratchCard = function(){
 
             bindEvent();
         }
-        top.src = 'css/html5.png'
+        top.src = 'css/html5.jpg'
         
 
     }

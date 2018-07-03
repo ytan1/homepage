@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/ytan1/homepage#readme",
   "dependencies": {
+    "cross-env": "^5.2.0",
     "express": "^4.16.3"
   }
 }
