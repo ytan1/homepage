@@ -45,6 +45,8 @@
     document.getElementsByClassName('nav')[0].onclick = function(e){ smoothScroll(e) }
     document.getElementsByClassName('header-bottom')[0].onclick = function(e){ smoothScroll(e) }
     // document.getElementsByClassName('intro')[0].getElementsByTagName('a')[0].onclick = function(e){ smoothScroll(e) }
+    var goTop = document.getElementsByClassName('gotop')[0]
+    goTop.onclick = function(e){ smoothScroll(e) }
 
 
 
@@ -101,8 +103,29 @@
 
     //for nav bar scrolling, parallax scrolling and (fake) rendering after scroll
     var lastScrollTop = 0
+    var beginTop = 2480, endTop = 2800, beginOrigin = -250, endOrigin = 350, ratio = (endOrigin - beginOrigin)/(endTop - beginTop)
+    var skills = document.getElementsByClassName('skill')
     window.onload = function(){
         lastScrollTop = window.pageYOffset || html.scrollTop
+        //for perspective-origin of skill cards
+        var perspectiveOrigin = '50% 50%'
+        if(lastScrollTop > beginTop && lastScrollTop < endTop){
+            perspectiveOrigin = '200% ' + (ratio * (lastScrollTop - beginTop) + beginOrigin) + '%' // horizontal vertical
+            Array.prototype.forEach.call(skills, function(ele){
+                ele.style.perspectiveOrigin = perspectiveOrigin
+            })
+        }else if(lastScrollTop < beginTop){
+            perspectiveOrigin = '200% ' + beginOrigin + '%' // horizontal vertical
+            Array.prototype.forEach.call(skills, function(ele){
+                ele.style.perspectiveOrigin = perspectiveOrigin
+            })
+        }else if(lastScrollTop > endTop){
+            perspectiveOrigin = '200% ' + endOrigin + '%' // horizontal vertical
+            Array.prototype.forEach.call(skills, function(ele){
+                ele.style.perspectiveOrigin = perspectiveOrigin
+            })
+        }
+
     }
     var nav = document.getElementsByClassName('nav')[0]
     var background = document.getElementsByClassName('background')[0]
@@ -110,9 +133,16 @@
     var clientHeight = 0
     var scrollHeight = document.getElementsByTagName('body')[0].scrollHeight;
     var contents = document.getElementsByClassName('content-block')
+    
+    
     window.onscroll = function(){
         scrollTop =  window.pageYOffset || html.scrollTop
         clientHeight = html.clientHeight
+        if(scrollTop > 500){
+            goTop.classList.add('showup')
+        }else{
+            goTop.classList.remove('showup')
+        }
         if(scrollTop > 784){
             nav.classList.add('fix-nav')        //fix nav after scrolling down to first content
         }
@@ -157,6 +187,18 @@
         }
 
         lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+
+        //perspective of flip card
+        // var beginTop = 2500, endTop = 3136, beginOrigin = -200, endOrigin = 300, ratio = (endOrigin - beginOrigin)/(endTop - beginTop) move to top
+        // var skills = document.getElementsByClassName('skill') move to top
+        var perspectiveOrigin = '50% 50%'
+        if(scrollTop > beginTop && scrollTop < endTop){
+            perspectiveOrigin = '200% ' + (ratio * (scrollTop - beginTop) + beginOrigin) + '%' // horizontal vertical
+            Array.prototype.forEach.call(skills, function(ele){
+                ele.style.perspectiveOrigin = perspectiveOrigin
+            })
+        }
+       
     }
 
 
@@ -191,7 +233,7 @@
     //flip behaviour
     var flipCard = new FlipCard()
     var skill2 = document.getElementById('skill2')
-    flipCard.build(skill2, '#5e9af9')
+    flipCard.build(skill2, 'rgb(94,154,249, .7)')
     var skill3 = document.getElementById('skill3')
     var skill4 = document.getElementById('skill4')
     var skill5 = document.getElementById('skill5')
@@ -200,5 +242,7 @@
     flipCard.build(skill4, 'rgb(37, 252, 102, .7)')
     flipCard.build(skill5, 'rgb(254, 255, 247, .7)', true)
     flipCard.build(skill6, 'rgb(77, 36, 147, .7)')
+    
+
 
 })()  

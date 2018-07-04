@@ -85,7 +85,8 @@ var FlipCard = function(){
             'MozTransform:' + transform + ';' + 
             'msTransform:' + transform + ';' + 
             'Webkittransform:' + transform + ';' + 
-            'background:' + color + ';' 
+            'background:' + color + ';' +
+            'color: inherit;'
         )
     }
 

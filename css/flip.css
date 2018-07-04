@@ -1,8 +1,8 @@
 .skill{
     display: inline-block;
     
-    perspective: 800px;
-    perspective-origin: 150% 200%;
+    perspective: 1000px;
+    perspective-origin: 150% 0%;
 
 }
 .flip-container, .flip-container-vertical{
@@ -20,7 +20,12 @@
 }
 
 #content3{
-    height: 600px;
+    height: 650px;
+}
+.otherskills{
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
 }
 #skill1-wrap{
     position: absolute;

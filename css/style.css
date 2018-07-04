@@ -217,3 +217,18 @@ footer i{
     font-size: 24px;
     color: white;
 }
+
+.gotop{
+    position: fixed;
+    bottom: 50px;
+    font-size: 48px;
+    color: #088da5;
+    font-weight: bold;
+    left: 50%;
+    margin-left: -500px;
+    transition: opacity .3s linear;
+    opacity: 0;
+}
+.showup{
+    opacity: 1;
+}
