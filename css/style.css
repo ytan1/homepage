@@ -9,7 +9,7 @@ html,body{
 body{
     position: relative;
     
-    /*overflow: hidden;*/
+    overflow-x: hidden;
 }
 .background{
     width: 100%;
@@ -36,8 +36,15 @@ a{
 
 }
 @media screen and (max-width: 800px){
+    body{
+        width: 800px;
+        overflow-x: auto;
+    }
     .header, .header-bottom{
         width: 800px;
+    }
+    .nav{
+        display: none;
     }
 }
 .header-bottom{

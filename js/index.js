@@ -103,7 +103,7 @@
 
     //for nav bar scrolling, parallax scrolling and (fake) rendering after scroll
     var lastScrollTop = 0
-    var beginTop = 2480, endTop = 2800, beginOrigin = -250, endOrigin = 350, ratio = (endOrigin - beginOrigin)/(endTop - beginTop)
+    var beginTop = 2700, endTop = 2800, beginOrigin = -250, endOrigin = 350, ratio = (endOrigin - beginOrigin)/(endTop - beginTop)
     var skills = document.getElementsByClassName('skill')
     window.onload = function(){
         lastScrollTop = window.pageYOffset || html.scrollTop
@@ -129,14 +129,15 @@
     }
     var nav = document.getElementsByClassName('nav')[0]
     var background = document.getElementsByClassName('background')[0]
-    var scrollTop = 0
+    var scrollTop = 0, scrollLeft = 0
     var clientHeight = 0
     var scrollHeight = document.getElementsByTagName('body')[0].scrollHeight;
     var contents = document.getElementsByClassName('content-block')
-    
+    var altNav = document.getElementsByClassName('alt-nav')[0]
     
     window.onscroll = function(){
-        scrollTop =  window.pageYOffset || html.scrollTop
+        scrollLeft = window.PageXOffset || html.scrollLeft || document.body.scrollLeft
+        scrollTop =  window.pageYOffset || html.scrollTop || document.body.scrollTop
         clientHeight = html.clientHeight
         if(scrollTop > 500){
             goTop.classList.add('showup')
@@ -198,7 +199,9 @@
                 ele.style.perspectiveOrigin = perspectiveOrigin
             })
         }
-       
+        
+        //the fix alt-nav scroll on x-axis
+        altNav.style.left = -scrollLeft + 'px'
     }
 
 
@@ -215,7 +218,13 @@
             ele.classList.toggle('eject')
         })
     }
-
+    var altContacts = document.getElementsByClassName('alt-nav-item')[3]
+    var altContactItem = document.getElementsByClassName('alt-contact-item')
+    altContacts.onclick = function(){
+        Array.prototype.forEach.call(altContactItem, function(ele){
+            ele.classList.toggle('eject')
+        })
+    }
     //carousel in app
     var carousel = new Carousel()
     carousel.build(document.getElementsByClassName('app-carousel')[0])
