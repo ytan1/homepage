@@ -30,7 +30,7 @@ var Game = function(container){
     dinosaur.appendChild(dinosaurInside)
     container.append(gameover)
     gameover.append(gameoverInside)
-    
+    var controllHeader = container.parentElement.parentElement.parentElement //for click event on header to jump
 
     //start the game, inserting cactus
     var start = function(){
@@ -108,7 +108,7 @@ var Game = function(container){
                 e.preventDefault()
             }
         }
-        container.onclick = null
+        controllHeader.onclick = null
         //dinosaur in tears
         runAmin.destroy()
         runAmin = bodymovin.loadAnimation({
@@ -154,7 +154,7 @@ var Game = function(container){
             }
         }
         //click or tap to jump
-        container.onclick = function(e){
+        controllHeader.onclick = function(e){
             e.preventDefault()
             //same thing as above
             if(isJump == true){
