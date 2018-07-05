@@ -9,6 +9,10 @@ html,body{
 body{
     position: relative;
     
+    
+}
+.body-wrap{
+    width: 100%;
     overflow-x: hidden;
 }
 .background{
@@ -38,6 +42,9 @@ a{
 @media screen and (max-width: 800px){
     body{
         width: 800px;
+        
+    }
+    .body-wrap{
         overflow-x: auto;
     }
     .header, .header-bottom{

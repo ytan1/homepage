@@ -15,198 +15,201 @@
 
 </head>
 <body>
-    <div class="background"></div>
-    <header class="header" id="top">
+    <div class="body-wrap">
+        <div class="background"></div>
+        <header class="header" id="top">
 
-        <div class="title-anim"></div>
-        <div class="title-game">
-            <div class="game-wrap"><div id="game-horizon"></div></div>
-        </div>
+            <div class="title-anim"></div>
+            <div class="title-game">
+                <div class="game-wrap"><div id="game-horizon"></div></div>
+            </div>
 
-    </header>
-    <div class="header-bottom">
-        <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none">
-            <!-- for drop shadow on elements inside svg -->
-            <!-- refer to https://stackoverflow.com/questions/6088409/svg-drop-shadow-using-css3 -->
-            <filter id="dropshadow" height="130%">
-                  <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> 
-                  <!-- dx dy control the size -->
-                  <feOffset dx="5" dy="5" result="offsetblur"/>
-                  <feComponentTransfer>
-                    <!-- slope controls the opacity -->
-                    <feFuncA type="linear" slope="0.8"/>
-                  </feComponentTransfer>
-                  <feMerge> 
-                    <feMergeNode/>
-                    <feMergeNode in="SourceGraphic"/> 
-                  </feMerge>
-            </filter>
-                <!-- bezier cube "Mx y Cx1 y1, x2 y2, x y " -->
-            <path d="M0 0 C20 100, 80 100, 100 0 " stroke="#088da5" fill="#088da5" filter=url('#dropshadow')></path>
-        </svg>
-        <a href="#content1"><div class="arrow-down"></div></a>
-        
-    </div>
-
-    <!-- content -->
-    <div class="content">
-        <div class="content-block" id="content1">
-            <div class="content-title">About myself</div>
-            <div class="intro-wrap">
-                <div class="avatar"><img src="./css/avatar.png"></div>
-                <div class="intro">Hi! Thank you for coming to my awesome homepage. My name is Yang (or Young). I am now a student in University of Alberta. I love to create beautiful stuff and fancy effects on a website and have been programming for a few applications of my own. Check them out~ Meanwhile I am looking forward to cooperating with all you talented guys in this field and learning a lot from you guys at any moment. Other than that, I like watching Netflix pretty much everyday, hitting the gym and playing Civ5 sometimes... Anyway I hope you can find something <em><strong><a href="#top">fun</a></strong></em> on this page. See you around!</div>
-            </div>
-        </div>
-        <div class="content-block" id="content2">
-            <div class="content-title">My apps</div>
-            <div class="apps-wrap">
-                <div class="app">
-                    <div class="app-left">
-                        <div class="app-name">A chat app for recruiting and finding jobs</div>
-                        <div class="app-features">
-                            <i class="far fa-star"></i>&nbsp;Containing 2 types of users (employees and employers) with functions of chatting, posting infos, uploading avatars and CV<br>
-                            <i class="far fa-star"></i>&nbsp;Single page app built on React.js, redux and react-router <br>
-                            <i class="far fa-star"></i>&nbsp;Smooth UI and animation based on Semantic UI and React Transition Group<br>
-                            <i class="far fa-star"></i>&nbsp;Back end served by express.js, deployed on AWS linux AMI<br>
-                            <i class="far fa-star"></i>&nbsp;Data storage by MongoDB and mongoose<br>
-                            <i class="far fa-star"></i>&nbsp;First page server side rendering for performance optimization<br>
-
-                        </div>
-                    </div>
-                    <div class="app-right">
-                        <div class="app-carousel">
-                            <img src="./css/chatapp1.JPG" class="pic for chatapp">
-                            <img src="./css/chatapp2.PNG" class="pic for chatapp">
-                            <img src="./css/chatapp3.JPG" class="pic for chatapp">
-                            <img src="./css/chatapp4.JPG" class="pic for chatapp">
-                        </div>
-                        <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
-                    </div>
-                </div>
-                <div class="app">
-                    <div class="app-left">
-                        <div class="app-name"><a href="http://www.ytan1mall.com/" target="_blank">EMall - A website for online shopping</a></div>
-                        <div class="app-features">
-                            <strong>Front end: <br></strong>
-                            <i class="far fa-star"></i>&nbsp;Users can view the list of products with pagination, details of product, check the quantity in cart page, confirm order, view multiple orders and order details.<br>
-                            <i class="far fa-star"></i>&nbsp;Users can register, login, find password by security questions and reset personal info  <br>
-                            <i class="far fa-star"></i>&nbsp;One user can set multiple shipping addresses in order confirm page<br>
-                            <i class="far fa-star"></i>&nbsp;Client side built with jquery, packaged by webpack4 with JS and CSS files seperatedly loaded.<br>
-                            <strong>Back end: <br></strong>
-                            <i class="far fa-star"></i>&nbsp;Configured using SpringMVC<br>
-                            <i class="far fa-star"></i>&nbsp;Using MyBatis for operating DB served by MySQL<br>
-                            <i class="far fa-star"></i>&nbsp;Using pagehelper plugin for pagination of products and orders info<br>
-                            <i class="far fa-star"></i>&nbsp;Deployed by tomcat server in AWS linux AMI, seperated FTP server for pictures<br>
-                        </div>
-                    </div>
-                    <div class="app-right">
-                        
-                    </div>
-                </div>
-                <div class="app">
-                    <div class="app-left">
-                        <div class="app-name">Other projects: </div>
-                        <div class="app-features">
-                            <i class="far fa-star"></i>&nbsp;A <strong><a href="https://ytan1.github.io/gallery-via-react/" target="_blank">animated photo gallery</a></strong> based on CSS3 and React.js<br>
-                            <i class="far fa-star"></i>&nbsp;A single page task managing system using SCSS and gulp. Mobile friendly. <br>
-                            <i class="far fa-star"></i>&nbsp;Some<strong><a href="https://github.com/ytan1/games" target="_blank"> small games </a></strong>including tetris battling, snake just for your fun! <br>
-                        </div>
-                    </div>
-                    <div class="app-right">
-                        <div class="app-pic"></div>
-                    </div>
-                </div>
-
-                
-            </div>
-        </div>
-        <div class="content-block" id="content3">
-            <div class="content-title">Skillsets</div>
-            <div class="skill" id="skill1-wrap">
-                <canvas id="canvas" width="210" height="150">
-                </canvas>
-                <div style="display: none;">
-                    <img id="scratch-top" src="css/html5.png" alt="HTML5 (IMPORT ERROR)">
-                </div>
-            </div>
-            <div class="skill" id="skill2-wrap">
-                <div id="skill2" style="height: 160px;width: 160px;">
-                    <img src="css/css3.png" alt="css3 (image error)">
-                    <div>CSS3 used for the <a href="https://ytan1.github.io/gallery-via-react/" target="_blank"><strong>animated gallery</strong></a> and many other works</div>
-                </div>
-            </div>
-            <div class="skill" id="skill3-wrap">
-                <div id="skill3" style="height: 130px;width: 390px;color:#fff;">
-                    <img src="css/reactjs.jpg" alt="react.js (image error)">
-                    <div>React, redux and router4 are applied to my chat app.</div>
-                </div>
-            </div>
-            <div class="skill" id="skill4-wrap">
-                <div id="skill4" style="height: 140px;width: 280px;">
-                    <img src="css/expressjs.jpg" alt="expressjs (image error)">
-                    <div>...with express.js for server side of the chat app.</div>
-                </div>
-            </div>
-            <div class="skill" id="skill5-wrap">
-                <div id="skill5" style="height: 140px;width: 200px;">
-                    <img src="css/mongoose.jpg" alt="mongoose (image error)">
-                    <div>...with mongoose to connect MongoDB for user and chat info</div>
-                </div>
-            </div>
-            <div class="skill" id="skill6-wrap">
-                <div id="skill6" style="height: 140px;width: 250px;color:#fff;">
-                    <img src="css/jquery.jpg" alt="jquery (image error)">
-                    <div>I can code by vanilla, like this <em>awesome</em> page. I also used jQuery for <a href="http://www.ytan1mall.com/" target="_blank"><strong>this</strong></a> e-commerce site.</div>
-                </div>
-            </div>
-            <div class="otherskills">Other techniques I'm currently active into: After Effects, redux and router4, webpack, semantic-UI-react, socket.io, SSR, springMVC, mySQL(with myBatis), SASS, gulp</div>
+        </header>
+        <div class="header-bottom">
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100px" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <!-- for drop shadow on elements inside svg -->
+                <!-- refer to https://stackoverflow.com/questions/6088409/svg-drop-shadow-using-css3 -->
+                <filter id="dropshadow" height="130%">
+                      <feGaussianBlur in="SourceAlpha" stdDeviation="3"/> 
+                      <!-- dx dy control the size -->
+                      <feOffset dx="5" dy="5" result="offsetblur"/>
+                      <feComponentTransfer>
+                        <!-- slope controls the opacity -->
+                        <feFuncA type="linear" slope="0.8"/>
+                      </feComponentTransfer>
+                      <feMerge> 
+                        <feMergeNode/>
+                        <feMergeNode in="SourceGraphic"/> 
+                      </feMerge>
+                </filter>
+                    <!-- bezier cube "Mx y Cx1 y1, x2 y2, x y " -->
+                <path d="M0 0 C20 100, 80 100, 100 0 " stroke="#088da5" fill="#088da5" filter=url('#dropshadow')></path>
+            </svg>
+            <a href="#content1"><div class="arrow-down"></div></a>
             
         </div>
-        <div class="nav">
-            <a href="#content1">
-                <div class="nav-item">About me</div>
-            </a>
-            <a href="#content2">
-                <div class="nav-item">My projects</div>
-            </a>
-            <a href="#content3">
-                <div class="nav-item">My skills</div>
-            </a>
-            <div class="nav-item">Contacts</div>
-            <div class="contacts">
-                <a href="https://github.com/ytan1/" target="_blank" class="contact-item"><div ><i class="fab fa-github"></i></div></a>
-                <a href="https://www.linkedin.com/in/yang-tan-11a817b9/" target="_blank" class="contact-item"><div><i class="fab fa-linkedin"></i></div></a>
-                <a href="mailto:ytan1@ualberta.ca" target="_blank" class="contact-item"><div><i class="fa fa-envelope"></i></div><div class="drop-down">ytan1@ualberta.ca</div></a>
-                <div class="contact-item"><i class="fa fa-phone"></i><div class="drop-down">587-591-4041</div></div>
-            </div>
 
-        </div>
-    </div>
-    <div class="gotop" >
-        <a href="#top">&uarr;Top</a>
-    </div>
-    <div class="alt-nav">
-        <div class="alt-nav-wrap">
-            <div class="alt-nav-item"><a href="#content1">Me</a></div>
-            <div class="alt-nav-item"><a href="#content2">Apps</a></div>
-            <div class="alt-nav-item"><a href="#content3">Techs</a></div>
-            <div class="alt-nav-item">Contacts</div>
-            <div class="alt-contacts">
-                <a href="https://github.com/ytan1/" target="_blank" class="alt-contact-item"><div ><i class="fab fa-github"></i></div></a>
-                <a href="https://www.linkedin.com/in/yang-tan-11a817b9/" target="_blank" class="alt-contact-item"><div><i class="fab fa-linkedin"></i></div></a>
-                <a href="mailto:ytan1@ualberta.ca" target="_blank" class="alt-contact-item"><div><i class="fa fa-envelope"></i></div><div class="drop-down">ytan1@ualberta.ca</div></a>
-                <div class="alt-contact-item"><i class="fa fa-phone"></i><div class="drop-down">587-591-4041</div></div>
+        <!-- content -->
+        <div class="content">
+            <div class="content-block" id="content1">
+                <div class="content-title">About myself</div>
+                <div class="intro-wrap">
+                    <div class="avatar"><img src="./css/avatar.png"></div>
+                    <div class="intro">Hi! Thank you for coming to my awesome homepage. My name is Yang (or Young). I am now a student in University of Alberta. I love to create beautiful stuff and fancy effects on a website and have been programming for a few applications of my own. Check them out~ Meanwhile I am looking forward to cooperating with all you talented guys in this field and learning a lot from you guys at any moment. Other than that, I like watching Netflix pretty much everyday, hitting the gym and playing Civ5 sometimes... Anyway I hope you can find something <em><strong><a href="#top">fun</a></strong></em> on this page. See you around!</div>
+                </div>
+            </div>
+            <div class="content-block" id="content2">
+                <div class="content-title">My apps</div>
+                <div class="apps-wrap">
+                    <div class="app">
+                        <div class="app-left">
+                            <div class="app-name">A chat app for recruiting and finding jobs</div>
+                            <div class="app-features">
+                                <i class="far fa-star"></i>&nbsp;Containing 2 types of users (employees and employers) with functions of chatting, posting infos, uploading avatars and CV<br>
+                                <i class="far fa-star"></i>&nbsp;Single page app built on React.js, redux and react-router <br>
+                                <i class="far fa-star"></i>&nbsp;Smooth UI and animation based on Semantic UI and React Transition Group<br>
+                                <i class="far fa-star"></i>&nbsp;Back end served by express.js, deployed on AWS linux AMI<br>
+                                <i class="far fa-star"></i>&nbsp;Data storage by MongoDB and mongoose<br>
+                                <i class="far fa-star"></i>&nbsp;First page server side rendering for performance optimization<br>
+
+                            </div>
+                        </div>
+                        <div class="app-right">
+                            <div class="app-carousel">
+                                <img src="./css/chatapp1.JPG" class="pic for chatapp">
+                                <img src="./css/chatapp2.PNG" class="pic for chatapp">
+                                <img src="./css/chatapp3.JPG" class="pic for chatapp">
+                                <img src="./css/chatapp4.JPG" class="pic for chatapp">
+                            </div>
+                            <div class="dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+                        </div>
+                    </div>
+                    <div class="app">
+                        <div class="app-left">
+                            <div class="app-name"><a href="http://www.ytan1mall.com/" target="_blank">EMall - A website for online shopping</a></div>
+                            <div class="app-features">
+                                <strong>Front end: <br></strong>
+                                <i class="far fa-star"></i>&nbsp;Users can view the list of products with pagination, details of product, check the quantity in cart page, confirm order, view multiple orders and order details.<br>
+                                <i class="far fa-star"></i>&nbsp;Users can register, login, find password by security questions and reset personal info  <br>
+                                <i class="far fa-star"></i>&nbsp;One user can set multiple shipping addresses in order confirm page<br>
+                                <i class="far fa-star"></i>&nbsp;Client side built with jquery, packaged by webpack4 with JS and CSS files seperatedly loaded.<br>
+                                <strong>Back end: <br></strong>
+                                <i class="far fa-star"></i>&nbsp;Configured using SpringMVC<br>
+                                <i class="far fa-star"></i>&nbsp;Using MyBatis for operating DB served by MySQL<br>
+                                <i class="far fa-star"></i>&nbsp;Using pagehelper plugin for pagination of products and orders info<br>
+                                <i class="far fa-star"></i>&nbsp;Deployed by tomcat server in AWS linux AMI, seperated FTP server for pictures<br>
+                            </div>
+                        </div>
+                        <div class="app-right">
+                            
+                        </div>
+                    </div>
+                    <div class="app">
+                        <div class="app-left">
+                            <div class="app-name">Other projects: </div>
+                            <div class="app-features">
+                                <i class="far fa-star"></i>&nbsp;A <strong><a href="https://ytan1.github.io/gallery-via-react/" target="_blank">animated photo gallery</a></strong> based on CSS3 and React.js<br>
+                                <i class="far fa-star"></i>&nbsp;A single page task managing system using SCSS and gulp. Mobile friendly. <br>
+                                <i class="far fa-star"></i>&nbsp;Some<strong><a href="https://github.com/ytan1/games" target="_blank"> small games </a></strong>including tetris battling, snake just for your fun! <br>
+                            </div>
+                        </div>
+                        <div class="app-right">
+                            <div class="app-pic"></div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+            </div>
+            <div class="content-block" id="content3">
+                <div class="content-title">Skillsets</div>
+                <div class="skill" id="skill1-wrap">
+                    <canvas id="canvas" width="210" height="150">
+                    </canvas>
+                    <div style="display: none;">
+                        <img id="scratch-top" src="css/html5.png" alt="HTML5 (IMPORT ERROR)">
+                    </div>
+                </div>
+                <div class="skill" id="skill2-wrap">
+                    <div id="skill2" style="height: 160px;width: 160px;">
+                        <img src="css/css3.png" alt="css3 (image error)">
+                        <div>CSS3 used for the <a href="https://ytan1.github.io/gallery-via-react/" target="_blank"><strong>animated gallery</strong></a> and many other works</div>
+                    </div>
+                </div>
+                <div class="skill" id="skill3-wrap">
+                    <div id="skill3" style="height: 130px;width: 390px;color:#fff;">
+                        <img src="css/reactjs.jpg" alt="react.js (image error)">
+                        <div>React, redux and router4 are applied to my chat app.</div>
+                    </div>
+                </div>
+                <div class="skill" id="skill4-wrap">
+                    <div id="skill4" style="height: 140px;width: 280px;">
+                        <img src="css/expressjs.jpg" alt="expressjs (image error)">
+                        <div>...with express.js for server side of the chat app.</div>
+                    </div>
+                </div>
+                <div class="skill" id="skill5-wrap">
+                    <div id="skill5" style="height: 140px;width: 200px;">
+                        <img src="css/mongoose.jpg" alt="mongoose (image error)">
+                        <div>...with mongoose to connect MongoDB for user and chat info</div>
+                    </div>
+                </div>
+                <div class="skill" id="skill6-wrap">
+                    <div id="skill6" style="height: 140px;width: 250px;color:#fff;">
+                        <img src="css/jquery.jpg" alt="jquery (image error)">
+                        <div>I can code by vanilla, like this <em>awesome</em> page. I also used jQuery for <a href="http://www.ytan1mall.com/" target="_blank"><strong>this</strong></a> e-commerce site.</div>
+                    </div>
+                </div>
+                <div class="otherskills">Other techniques I'm currently active into: After Effects, redux and router4, webpack, semantic-UI-react, socket.io, SSR, springMVC, mySQL(with myBatis), SASS, gulp</div>
+                
+            </div>
+            <div class="nav">
+                <a href="#content1">
+                    <div class="nav-item">About me</div>
+                </a>
+                <a href="#content2">
+                    <div class="nav-item">My projects</div>
+                </a>
+                <a href="#content3">
+                    <div class="nav-item">My skills</div>
+                </a>
+                <div class="nav-item">Contacts</div>
+                <div class="contacts">
+                    <a href="https://github.com/ytan1/" target="_blank" class="contact-item"><div ><i class="fab fa-github"></i></div></a>
+                    <a href="https://www.linkedin.com/in/yang-tan-11a817b9/" target="_blank" class="contact-item"><div><i class="fab fa-linkedin"></i></div></a>
+                    <a href="mailto:ytan1@ualberta.ca" target="_blank" class="contact-item"><div><i class="fa fa-envelope"></i></div><div class="drop-down">ytan1@ualberta.ca</div></a>
+                    <div class="contact-item"><i class="fa fa-phone"></i><div class="drop-down">587-591-4041</div></div>
+                </div>
+
             </div>
         </div>
-        
-    </div>
-    <footer>
-
-        <a href="https://github.com/ytan1/homepage"><i class="fab fa-github"></i></a>
-        
-        <div>© 2018 Created by Yang. Powered by AWS.Reporting any bugs through contacts is appreciated.
+        <div class="gotop" >
+            <a href="#top">&uarr;Top</a>
         </div>
-    </footer>
+        <div class="alt-nav">
+            <div class="alt-nav-wrap">
+                <div class="alt-nav-item"><a href="#content1">Me</a></div>
+                <div class="alt-nav-item"><a href="#content2">Apps</a></div>
+                <div class="alt-nav-item"><a href="#content3">Techs</a></div>
+                <div class="alt-nav-item">Contacts</div>
+                <div class="alt-contacts">
+                    <a href="https://github.com/ytan1/" target="_blank" class="alt-contact-item"><div ><i class="fab fa-github"></i></div></a>
+                    <a href="https://www.linkedin.com/in/yang-tan-11a817b9/" target="_blank" class="alt-contact-item"><div><i class="fab fa-linkedin"></i></div></a>
+                    <a href="mailto:ytan1@ualberta.ca" target="_blank" class="alt-contact-item"><div><i class="fa fa-envelope"></i></div><div class="drop-down">ytan1@ualberta.ca</div></a>
+                    <div class="alt-contact-item"><i class="fa fa-phone"></i><div class="drop-down">587-591-4041</div></div>
+                </div>
+            </div>
+            
+        </div>
+        <footer>
+
+            <a href="https://github.com/ytan1/homepage"><i class="fab fa-github"></i></a>
+            
+            <div>© 2018 Created by Yang. Powered by AWS.Reporting any bugs through contacts is appreciated.
+            </div>
+        </footer>
+    </div>
+    
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.7.3/min/tiny-slider.js"></script>
 
