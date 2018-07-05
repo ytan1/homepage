@@ -108,6 +108,7 @@ var Game = function(container){
                 e.preventDefault()
             }
         }
+        container.onclick = null
         //dinosaur in tears
         runAmin.destroy()
         runAmin = bodymovin.loadAnimation({
@@ -151,6 +152,21 @@ var Game = function(container){
                 //jump!
                 jumping.start()
             }
+        }
+        //click or tap to jump
+        container.onclick = function(e){
+            e.preventDefault()
+            //same thing as above
+            if(isJump == true){
+                return
+            }
+            //otherwise
+            isJump = true
+            setTimeout(function(){
+                isJump = false
+            }, 1000)
+            //jump!
+            jumping.start()
         }
        
     }

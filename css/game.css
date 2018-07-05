@@ -35,6 +35,7 @@
     /*center align, outside part overhidden*/
     width: 120%;
     margin-left: -10%;
+    cursor: pointer;
 }
 .cactus{
     display: inline-block;

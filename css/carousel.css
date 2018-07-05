@@ -5,7 +5,7 @@
 }
 .dots{
     position: absolute;
-    bottom: 10%;
+    bottom: -10%;
     width: 100%;
     text-align: center;
     /*border: 1px red solid;*/
@@ -17,5 +17,5 @@
     margin: 10px;
     border-radius: 50%;
     background: #999;
-
+    cursor: pointer;
 }
