@@ -28,8 +28,8 @@ var Game = function(container){
     gameoverInside.classList.add('gameover-inside')
     container.appendChild(dinosaur)         //notice: append work in chrome, not in IE mozilla. Use appendChild instead
     dinosaur.appendChild(dinosaurInside)
-    container.append(gameover)
-    gameover.append(gameoverInside)
+    container.appendChild(gameover)
+    gameover.appendChild(gameoverInside)
     var controllHeader = container.parentElement.parentElement.parentElement //for click event on header to jump
 
     //start the game, inserting cactus

@@ -1,24 +1,22 @@
 var FlipCard = function(){
-    var container, side, width, height, thickness = 20
-    var build = function(con, color, vertical){
+    var container, side, width, height, thickness = 20, iecolor
+    var build = function(con, color, opacity, vertical){
         container = con
         var frontDiv = container.children[0]
         var backDiv = container.children[1]
         width = parseInt(container.style.width)
         height = parseInt(container.style.height)
         
-
         if(navigator.sayswho.indexOf('IE') === -1){
             //non IE support transform style perspective
             //class for container
             //class for container
             if(!vertical){
                 container.classList.add('flip-container')
-                console.log(backDiv)
-                backDiv.setAttribute('style', addTransform('rotateY(180deg) translateZ(' + thickness/2 + 'px)', width, height, color))
+                backDiv.setAttribute('style', addTransform('rotateY(180deg) translateZ(' + thickness/2 + 'px)', width, height, color, opacity))
             }else{
                 container.classList.add('flip-container-vertical')
-                backDiv.setAttribute('style', addTransform('rotateX(180deg) translateZ(' + thickness/2 + 'px)', width, height, color))
+                backDiv.setAttribute('style', addTransform('rotateX(180deg) translateZ(' + thickness/2 + 'px)', width, height, color, opacity))
             }
             
             //set the size of side facets
@@ -26,38 +24,39 @@ var FlipCard = function(){
             
             //for left side
             side = document.createElement('div')
-            side.setAttribute('style', addTransform('rotateY(-90deg) ' + 'translateZ(' + width/2 + 'px)', thickness, height, color))
-            container.append(side)
+            side.setAttribute('style', addTransform('rotateY(-90deg) ' + 'translateZ(' + width/2 + 'px)', thickness, height, color, opacity))
+            container.appendChild(side)
 
             //for right side
             side = document.createElement('div')
-            side.setAttribute('style', addTransform('rotateY(90deg) ' + 'translateZ(' + width/2 + 'px)', thickness, height, color))
-            container.append(side)
+            side.setAttribute('style', addTransform('rotateY(90deg) ' + 'translateZ(' + width/2 + 'px)', thickness, height, color, opacity))
+            container.appendChild(side)
             //for top side
             side = document.createElement('div')
-            side.setAttribute('style', addTransform('rotateX(90deg) ' + 'translateZ(' + height/2 + 'px)', width, thickness, color))
-            container.append(side)
+            side.setAttribute('style', addTransform('rotateX(90deg) ' + 'translateZ(' + height/2 + 'px)', width, thickness, color, opacity))
+            container.appendChild(side)
             //for bottom side
             side = document.createElement('div')
-            side.setAttribute('style', addTransform('rotateX(-90deg) ' + 'translateZ(' + height/2 + 'px)', width, thickness, color))
-            container.append(side)
+            side.setAttribute('style', addTransform('rotateX(-90deg) ' + 'translateZ(' + height/2 + 'px)', width, thickness, color, opacity))
+            container.appendChild(side)
         }
         else{
             //IE workaround, only front and back
             //class for container
+            //convert rbg without opacity
+            // iecolor = color.replace(/,\s?\.\d+/, '')  for rgb color only
+            iecolor = color
             if(!vertical){
                 container.classList.add('flip-container')
-                console.log(backDiv)
-                backDiv.setAttribute('style', addTransform('rotateY(180deg) translateZ(' + thickness/2 + 'px)', width, height, color))
+                backDiv.setAttribute('style', addTransform('rotateY(180deg) translateZ(' + thickness/2 + 'px)', width, height, iecolor))
                 backDiv.style.opacity = '0';
 
             }else{
                 container.classList.add('flip-container-vertical')
-                backDiv.setAttribute('style', addTransform('rotateX(180deg) translateZ(' + thickness/2 + 'px)', width, height, color))
+                backDiv.setAttribute('style', addTransform('rotateX(180deg) translateZ(' + thickness/2 + 'px)', width, height, iecolor))
                 backDiv.style.opacity = '0';
             }
             var parent = container.parentElement
-            console.log(parent)
             parent.onmouseover = function(){
                 setTimeout(function(){
                     backDiv.style.opacity = '1'
@@ -68,11 +67,11 @@ var FlipCard = function(){
                 setTimeout(function(){backDiv.style.opacity = '0';frontDiv.style.opacity = '1'}, 300)
             }
             //set the size of side facets
-            frontDiv.setAttribute('style', addTransform('translateZ(' + thickness/2 + 'px)', width, height, color))
+            frontDiv.setAttribute('style', addTransform('translateZ(' + thickness/2 + 'px)', width, height, iecolor))
         }
     }
     //add some inline style 
-    var addTransform = function(transform, width, height, color){
+    var addTransform = function(transform, width, height, color, opacity){
         return (
             'width:' + width + 'px;' + 
             'height:' + height + 'px;' + 
@@ -86,7 +85,8 @@ var FlipCard = function(){
             'msTransform:' + transform + ';' + 
             'Webkittransform:' + transform + ';' + 
             'background:' + color + ';' +
-            'color: inherit;'
+            'color: inherit;' + 
+            (opacity ? 'opacity: ' + opacity + ';' : '')
         )
     }
 

@@ -242,15 +242,15 @@
     //flip behaviour
     var flipCard = new FlipCard()
     var skill2 = document.getElementById('skill2')
-    flipCard.build(skill2, 'rgb(94,154,249, .7)')
+    flipCard.build(skill2, '#5E9AF9', 0.7)
     var skill3 = document.getElementById('skill3')
     var skill4 = document.getElementById('skill4')
     var skill5 = document.getElementById('skill5')
     var skill6 = document.getElementById('skill6')
-    flipCard.build(skill3, 'rgb(26, 42, 76, .7)', true) //true means flip vertically
-    flipCard.build(skill4, 'rgb(37, 252, 102, .7)')
-    flipCard.build(skill5, 'rgb(254, 255, 247, .7)', true)
-    flipCard.build(skill6, 'rgb(77, 36, 147, .7)')
+    flipCard.build(skill3, '#1A2A4C', 0.7, true) //true means flip vertically
+    flipCard.build(skill4, '#25FC66', 0.7)
+    flipCard.build(skill5, '#FEFFF7', 0.7, true)
+    flipCard.build(skill6, '#4D2493', 0.7)
     
 
 
