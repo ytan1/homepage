@@ -154,20 +154,23 @@ var Game = function(container){
             }
         }
         //click or tap to jump
-        controllHeader.onclick = function(e){
-            e.preventDefault()
-            //same thing as above
-            if(isJump == true){
-                return
+        setTimeout(function(){
+            controllHeader.onclick = function(e){
+                e.preventDefault()
+                //same thing as above
+                if(isJump == true){
+                    return
+                }
+                //otherwise
+                isJump = true
+                setTimeout(function(){
+                    isJump = false
+                }, 1000)
+                //jump!
+                jumping.start()
             }
-            //otherwise
-            isJump = true
-            setTimeout(function(){
-                isJump = false
-            }, 1000)
-            //jump!
-            jumping.start()
-        }
+        }, 200)
+        
        
     }
 
