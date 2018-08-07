@@ -103,10 +103,11 @@
 
     //for nav bar scrolling, parallax scrolling and (fake) rendering after scroll
     var lastScrollTop = 0
-    var beginTop = 2700, endTop = 2800, beginOrigin = -250, endOrigin = 350, ratio = (endOrigin - beginOrigin)/(endTop - beginTop)
+    var beginTop = 861, endTop = 2061, beginOrigin = -400, endOrigin = 500, ratio = (endOrigin - beginOrigin)/(endTop - beginTop)
     var skills = document.getElementsByClassName('skill')
     window.onload = function(){
         lastScrollTop = window.pageYOffset || html.scrollTop
+
         //for perspective-origin of skill cards
         var perspectiveOrigin = '50% 50%'
         if(lastScrollTop > beginTop && lastScrollTop < endTop){
@@ -193,6 +194,7 @@
         // var beginTop = 2500, endTop = 3136, beginOrigin = -200, endOrigin = 300, ratio = (endOrigin - beginOrigin)/(endTop - beginTop) move to top
         // var skills = document.getElementsByClassName('skill') move to top
         var perspectiveOrigin = '50% 50%'
+        console.log(lastScrollTop)
         if(scrollTop > beginTop && scrollTop < endTop){
             perspectiveOrigin = '200% ' + (ratio * (scrollTop - beginTop) + beginOrigin) + '%' // horizontal vertical
             Array.prototype.forEach.call(skills, function(ele){
